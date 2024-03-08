@@ -1,0 +1,602 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap');
+
+body {
+    background: #ededed;
+    font-family: "Alegreya Sans", sans-serif;
+}
+
+@mixin MyFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+// @include MyFlex;
+header {
+    width: 100%;
+    height: 100vh;
+
+    .upBox {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+
+        .upBoxInLeftBox {
+            display: flex;
+            gap: 13px;
+
+            .logoBox {
+                color: #272727;
+                gap: 5px;
+                font-size: 32px;
+                @include MyFlex;
+
+                p {
+                    font-size: 20px;
+                }
+            }
+
+            .searchBox {
+                display: flex;
+                border-radius: 20px;
+                padding: 1px;
+                background: #e2e2e2;
+                margin-left: 30px;
+
+                .searchIcon {
+                    @include MyFlex;
+                    width: 30px;
+                    border-radius: 50%;
+                    background: white;
+                }
+
+                input {
+                    border: none;
+                    outline: none;
+                    padding: 0px 10px;
+                    background: transparent;
+                    width: 165px;
+
+                }
+
+                input::placeholder {
+                    color: #272727
+                }
+            }
+
+            .microphoneIcon {
+                @include MyFlex;
+                width: 33px;
+                border-radius: 50%;
+                background: white;
+                cursor: pointer;
+            }
+        }
+
+        .upBoxInRightBox {
+            display: flex;
+            gap: 10px;
+
+            .phoneIcon {
+                @include MyFlex;
+                width: 33px;
+                border-radius: 50%;
+                color: white;
+                background: #272727;
+            }
+
+            .emailBox {
+                @include MyFlex;
+                background: #e2e2e2;
+                padding: 0px 17px;
+                border-radius: 20px;
+
+            }
+
+            .menuBox {
+                background: #272727;
+                @include MyFlex;
+                padding: 0px 20px;
+                border-radius: 20px;
+                gap: 5px;
+
+                p {
+                    color: #ededed
+                }
+
+                .barBox {
+                    @include MyFlex;
+                    flex-direction: column;
+                    gap: 3px;
+                    align-items: end;
+                    cursor: pointer;
+
+                    .firstSpan,
+                    .secondSpan {
+                        width: 20px;
+                        height: 2px;
+                        background: #ededed;
+                        transition: 0.4s;
+
+                    }
+
+                    .secondSpan {
+                        width: 14px;
+                    }
+
+                    &:hover {
+                        .firstSpan {
+                            width: 14px;
+                            transition: 0.4s;
+
+                        }
+
+                        .secondSpan {
+                            width: 20px;
+                            transition: 0.4s;
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .downBox {
+        display: flex;
+        gap: 40px;
+        padding: 0px 0px 30px 0px;
+
+        .downBoxinLeftBox {
+            padding: 40px 20px;
+
+            .textBox {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .bigText {
+                    display: flex;
+                    gap: 10px;
+                    font-size: 100px;
+
+                    p {
+                        max-width: 600px;
+
+                        span {
+                            color: #ff9e70;
+                        }
+                    }
+                }
+
+                p {
+                    max-width: 400px;
+                }
+
+                .btnBox {
+                    display: flex;
+                    gap: 10px;
+
+                    .moreBtn,
+                    .touchBtn {
+                        background: #e2e2e2;
+                        height: 33px;
+                        width: 80px;
+                        border-radius: 18px;
+                        position: relative;
+                        cursor: pointer;
+
+                        p {
+                            position: absolute;
+                            left: 24px;
+                            top: 7px;
+
+                        }
+
+                        overflow: hidden;
+
+                        .line {
+                            background: #2727272c;
+                            width: 15px;
+                            height: 150%;
+                            position: absolute;
+                            top: -10px;
+                            transition: 1.7s;
+                            transform: rotate(25deg);
+                        }
+
+                        &:hover {
+                            .line {
+                                width: 100%;
+                                transform: translate(0px);
+                                transition: 1.7s;
+                            }
+                        }
+                    }
+
+                    .touchBtn {
+                        background: #272727;
+                        height: 33px;
+                        width: 130px;
+                        border-radius: 18px;
+                        position: relative;
+                        cursor: pointer;
+
+                        .line {
+                            background: #e2e2e23f;
+                        }
+
+                        p {
+                            color: #e2e2e2;
+                            left: 24px;
+                            top: 7px;
+
+                        }
+                    }
+                }
+            }
+
+            .swiperBox {
+                padding: 10px 0px;
+                margin-top: 40px;
+
+                .upperText {
+                    display: flex;
+                    gap: 10px;
+                    @include MyFlex;
+                    justify-content: start;
+
+                    p {
+                        font-size: 25px;
+                    }
+
+                    .clickLittle {
+                        background: #ff9e70;
+                        height: 25px;
+                        width: 25px;
+                        @include MyFlex;
+                        border-radius: 50%;
+                        transition: 1.6s;
+
+                        p {
+                            @include MyFlex;
+                            transform: rotate(45deg);
+                            font-size: 15px;
+
+                        }
+
+                        &:hover {
+                            transform: rotate(360deg);
+                            cursor: pointer;
+                            transition: 1.6s;
+                        }
+                    }
+
+
+
+                }
+
+                .middleBox {
+                    margin-top: 10px;
+
+                    .swiper {
+                        width: 600px;
+                        height: 250px;
+                        border-radius: 20px;
+                    }
+
+                    .swiper-slide {
+                        @include MyFlex;
+
+                        .swiperBox {
+                            width: 100%;
+                            height: 300px;
+                            @include MyFlex;
+
+                            img {
+                                transform: rotate(270deg);
+                                object-fit: cover;
+                                width: 100%;
+                                aspect-ratio: 1/1;
+                            }
+
+                            p {
+                                background-color: #e2e2e2;
+                                padding: 10px;
+                                border-radius: 10px;
+
+                                position: absolute;
+                                bottom: 20px;
+                                left: 20px;
+                                max-width: 500px;
+                            }
+                        }
+                    }
+
+
+                }
+
+                .downerBox {
+                    margin-top: 16px;
+                    display: flex;
+                    gap: 20px;
+
+                    .normalImage {
+                        width: 80px;
+                        height: 80px;
+                        border-radius: 20px;
+                        background: blue;
+                        overflow: hidden;
+
+                        img {
+                            object-fit: cover;
+                            width: 100%;
+                            aspect-ratio: 1 / 1.5;
+                        }
+                    }
+
+                    .normalText {
+                        @include MyFlex;
+                        flex-direction: column;
+                        align-items: start;
+
+                        p {
+                            font-size: 20px;
+                            font-weight: 600;
+                        }
+
+                        span {
+                            max-width: 400px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .downBoxinRightBox {
+            margin-top: 60px;
+
+            .imageBox {
+                width: 800px;
+                // height: 100vh;
+                border-radius: 20px;
+                position: relative;
+
+                img {
+
+                    object-fit: cover;
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 20px;
+
+                }
+
+                .imageClickBtn {
+                    background: #ededed;
+                    width: 160px;
+                    height: 160px;
+                    border-bottom-left-radius: 20px;
+                    position: absolute;
+                    top: 0px;
+                    right: 0px;
+                    display: flex;
+                    justify-content: end;
+
+                    .click {
+                        background: #ff9e70;
+                        border-radius: 20px;
+                        height: 80%;
+                        width: 80%;
+                        @include MyFlex;
+                        font-size: 50px;
+                        transition: 3s;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        z-index: 3;
+
+                        p {
+                            transform: rotate(45deg);
+                            @include MyFlex;
+                        }
+                    }
+
+                    .notMeanLeftBox {
+                        background: #ededed;
+
+                        position: absolute;
+                        top: 0px;
+                        left: -40px;
+                        width: 40px;
+                        height: 40px;
+                        clip-path: polygon(0% 0%, 63.15% 0%, 80.9% 8.54%, 89.96% 17.24%, 96% 28.03%, 100% 50%, 100% 100%, 100% 0%);
+                        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                        // clip-path: circle(50% at 50% 50%);
+                        /* Daha pürüzsüz bir çokgen */
+                        // clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                    }
+
+                    .notMeanDownBox {
+                        background: #ededed;
+
+                        position: absolute;
+                        bottom: -40px;
+                        right: 0;
+                        width: 40px;
+                        height: 40px;
+                        clip-path: polygon(0% 0%, 63.15% 0%, 80.9% 8.54%, 89.96% 17.24%, 96% 28.03%, 100% 50%, 100% 100%, 100% 0%);
+
+                    }
+
+                    &:hover {
+                        .click {
+                            border-radius: 50%;
+                            cursor: pointer;
+                            transition: 3s;
+                            transform: rotate(360deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 774px) {
+    header {
+        .upBox {
+            flex-direction: column;
+            @include MyFlex;
+            gap: 15px;
+
+            .upBoxInRightBox {
+                height: 33px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 392px) {
+    header {
+        .upBox {
+            padding: 20px 10px;
+
+            .upBoxInLeftBox {
+                display: flex;
+                gap: 5px;
+
+
+                .searchBox {
+                    margin-left: 5px;
+
+                    input {
+                        width: 100px;
+                    }
+                }
+
+
+            }
+
+            .upBoxInRightBox {
+                gap: 3px;
+
+                .emailBox {
+                    padding: 0px 8px;
+                }
+
+                .menuBox {
+                    padding: 0px 8px;
+
+                    p {
+                        font-size: 15px
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1510px) {
+    header {
+        .downBox {
+            flex-direction: column-reverse;
+            .downBoxinLeftBox {
+                @include MyFlex;
+                gap: 20px;
+                flex-wrap: wrap;
+
+            }
+
+            .downBoxinRightBox {
+                @include MyFlex;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    header {
+        .downBox {
+            .downBoxinRightBox {
+                .imageBox {
+                    width: 90%;
+
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 635px) {
+    header {
+        .downBox {
+            .downBoxinLeftBox {
+
+                .textBox {
+
+                    @include MyFlex;
+
+                    .bigText {
+
+                        text-align: center;
+                        font-size: 50px;
+                    }
+                }
+
+                .swiperBox {
+
+                    .middleBox {
+                        .swiper {
+
+                            width: 280px;
+                        }
+
+                        .swiper-slide {
+
+                            .swiperBox {
+                                p {
+
+                                    font-size: 10px;
+                                    left: 10px;
+                                    max-width: 200px;
+                                }
+                            }
+                        }
+                    }
+
+                    .downerBox {
+
+
+                        padding: 0px 10px;
+                        flex-direction: column;
+
+
+
+                    }
+                }
+            }
+
+            .downBoxinRightBox {
+                // margin-top: -20px;
+
+                .imageBox {
+                    .imageClickBtn {
+                        width: 60px;
+                        height: 60px;
+
+                        .click {
+                            font-size: 20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
